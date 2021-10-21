@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Bebas+Neue&family=Racing+Sans+One&display=swap");
+
+:root {
+  /* fonts */
+  --logo-font: "Racing Sans One", cursive;
+  --title-font: "Bebas Neue", cursive;
+  --body-font: "Baloo Da 2", cursive;
+
+  /* colors */
+  --black-color: #000;
+  --white-color: #fff;
+  --body-color: #121212;
+  --header-background: linear-gradient(
+    90deg,
+    #00021f -2.57%,
+    #12000f 51.27%,
+    #0e0000 101.59%
+  );
+
+  --header-height: 4.375rem;
+}
+
+/* layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--body-color);
+  font-family: var(--body-font);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.section {
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 2rem;
+}
+
+.interior-padding {
+  padding: 0.5rem 0.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.border {
+  box-shadow: 5px 5px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.divider-1,
+.divider-2 {
+  width: 95vw;
+  height: 0.01px;
+  background: linear-gradient(0deg, #000, #001);
+  position: relative;
+  margin: 0 auto;
+}
+
+.divider-1::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background: linear-gradient(
+    45deg,
+    rgb(4, 4, 48),
+    rgb(31, 7, 75),
+    rgb(4, 4, 48),
+    rgb(31, 7, 75),
+    rgb(4, 4, 48),
+    rgb(31, 7, 75)
+  );
+  background-size: 400%;
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+  filter: blur(0.1px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.divider-2::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background: linear-gradient(
+    305deg,
+    rgb(4, 4, 48),
+    rgb(31, 7, 75),
+    rgb(4, 4, 48),
+    rgb(31, 7, 75),
+    rgb(35, 35, 100),
+    rgb(31, 7, 75)
+  );
+  background-size: 400%;
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+  filter: blur(0.1px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* header */
+#header {
+  width: 100%;
+  height: var(--header-height);
+  background: var(--header-background);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#header nav {
+  height: var(--header-height);
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1.5rem;
+}
+
+#header nav .logo {
+  font: 400 2.25rem var(--logo-font);
+  color: var(--white-color);
+}
+
+#header nav i {
+  color: var(--white-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+nav .menu {
+  visibility: hidden;
+  opacity: 0;
+}
+
+nav .icon-close-menu {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  right: 1.5rem;
+  top: -1rem;
+
+  transition: 0.3s;
+}
+
+/* Show menu */
+
+nav.show .menu {
+  visibility: visible;
+  opacity: 1;
+
+  background: var(--header-background);
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav.show .menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3rem;
+
+  padding: 2rem;
+}
+
+nav.show .menu ul::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background: linear-gradient(
+    305deg,
+    #00021f -2.57%,
+    #12000f 51.27%,
+    #0e0000 101.59%,
+    #00021f -2.57%,
+    #12000f 51.27%,
+    #0e0000 101.59%
+  );
+  background-size: 400%;
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  z-index: -1;
+  animation: animate 30s linear infinite;
+  filter: blur(0.1px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+nav.show .menu ul a {
+  text-decoration: none;
+  font: 600 2rem var(--body-font);
+  color: var(--white-color);
+  position: relative;
+}
+
+nav.show .menu ul a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 20%;
+  left: -5%;
+  background-color: var(--white-color);
+
+  transition: 0.1s ease-in-out;
+}
+
+nav.show .menu ul a:hover::after {
+  width: 110%;
+}
+
+nav.show i.icon-close-menu {
+  visibility: visible;
+  opacity: 1;
+
+  top: 1rem;
+}
+
+/* home */
+#home {
+  background-image: url("../img/brano-K2MsWQc0M0k-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--body-color);
+
+  width: 100vw;
+  min-height: 10rem;
+  padding: 2rem 1.5rem;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-top: var(--header-height);
+}
+
+#home p {
+  color: var(--white-color);
+  font: 400 2.25rem var(--title-font);
+  text-transform: uppercase;
+  width: 80%;
+}
+
+/* sun */
+#sun .sol-text {
+  background-color: var(--black-color);
+}
+
+#sun .sol-image {
+  background-image: url("../img/tanishq-tiwari-ZYzLDzHZF08-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--black-color);
+
+  width: 100%;
+  min-height: 6.25rem;
+}
+
+#sun .sol-text p {
+  color: var(--white-color);
+  font-size: 1rem;
+}
+
+#about .container {
+  background-image: url("../img/jeremy-perkins-uhjiu8FjnsQ-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--black-color);
+
+  justify-content: center;
+  align-items: center;
+
+  width: auto;
+  min-height: 12.6875rem;
+}
+
+#about p {
+  color: var(--white-color);
+  font: 400 1.5rem var(--body-font);
+  width: 80%;
+  text-align: center;
+  line-height: 32px;
+}
+
+#planet-divider {
+  padding-bottom: 0;
+}
+
+#planet-divider div {
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  width: 80%;
+  text-align: center;
+  font: 400 2.25rem var(--title-font);
+  letter-spacing: 0.5rem;
+  color: var(--white-color);
+  background-color: var(--black-color);
+
+  /* box-shadow*/
+  position: relative;
+}
+
+#planet-divider div i {
+  vertical-align: middle;
+}
+
+#planet-divider div::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background: linear-gradient(
+    45deg,
+    rgb(25, 25, 146),
+    rgb(119, 21, 158),
+    rgb(25, 25, 146),
+    rgb(119, 21, 158),
+    rgb(25, 25, 146),
+    rgb(119, 21, 158)
+  );
+  background-size: 400%;
+
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+  filter: blur(5px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* PLANETAS */
+main .planet {
+  padding-top: 3rem;
+}
+
+.planet .container {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "planet-image planet-name" "planet-desc planet-desc" "planet-infos planet-infos";
+  background-color: #2c235c;
+  z-index: -2;
+  position: relative;
+}
+
+.planet .planet-name {
+  grid-area: planet-name;
+  align-self: center;
+  text-align: center;
+  font: 400 2.25rem var(--title-font);
+  color: var(--white-color);
+}
+
+.planet .planet-image {
+  grid-area: planet-image;
+  height: 100%;
+}
+
+.planet .planet-desc {
+  grid-area: planet-desc;
+  padding-top: 0;
+  color: var(--white-color);
+}
+
+.planet .planet-infos {
+  padding: 0.5rem;
+  grid-area: planet-infos;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5rem;
+  row-gap: 1.5rem;
+}
+
+.planet .planet-info {
+  max-width: 150px;
+  padding: 0.5rem 0;
+  align-self: center;
+  background-color: #2c235c;
+  position: relative;
+}
+
+.planet .planet-info::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(
+    45deg,
+    rgb(3, 3, 44),
+    rgb(51, 7, 68),
+    rgb(3, 3, 44),
+    rgb(51, 7, 68),
+    rgb(3, 3, 44),
+    rgb(51, 7, 68)
+  );
+  background-size: 400%;
+
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+  filter: blur(5px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.planet .planet-info p:first-child {
+  color: var(--white-color);
+  font: 700 1rem var(--body-font);
+  text-align: center;
+}
+
+.planet .planet-info p:nth-child(2) {
+  text-align: center;
+}
+
+#venus .container,
+#marte .container,
+#saturno .container,
+#netuno .container {
+  grid-template-areas: "planet-name planet-image" "planet-desc planet-desc" "planet-infos planet-infos";
+}
