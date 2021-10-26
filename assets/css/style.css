@@ -339,11 +339,11 @@ nav.show i.icon-close-menu {
 }
 
 /* sun */
-#sun .sol-text {
+#sun .sun-text {
   background-color: var(--black-color);
 }
 
-#sun .sol-image {
+#sun .sun-image {
   background-image: url("../img/tanishq-tiwari-ZYzLDzHZF08-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -354,31 +354,9 @@ nav.show i.icon-close-menu {
   min-height: 6.25rem;
 }
 
-#sun .sol-text p {
+#sun .sun-text p {
   color: var(--white-color);
   font-size: 1rem;
-}
-
-#about .container {
-  background-image: url("../img/jeremy-perkins-uhjiu8FjnsQ-unsplash.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: var(--black-color);
-
-  justify-content: center;
-  align-items: center;
-
-  width: auto;
-  min-height: 12.6875rem;
-}
-
-#about p {
-  color: var(--white-color);
-  font: 400 1.5rem var(--body-font);
-  width: 80%;
-  text-align: center;
-  line-height: 32px;;
 }
 
 /* planet-divider*/
@@ -645,6 +623,10 @@ footer p {
 }
 
 @media (min-width: 1100px) {
+  #sun .sun-image {
+    min-height: 10rem;
+  }
+
   .planet .container {
     grid-template-columns: auto min-content;
     grid-template-rows: min-content auto auto;
