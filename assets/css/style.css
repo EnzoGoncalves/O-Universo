@@ -170,6 +170,9 @@ ul {
   align-items: center;
 
   padding: 0 1.5rem;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo {
@@ -332,6 +335,7 @@ nav.show i.icon-close-menu {
   font: 400 2.25rem var(--title-font);
   text-transform: uppercase;
   width: 80%;
+  text-align: center;
 }
 
 /* sun */
@@ -374,9 +378,10 @@ nav.show i.icon-close-menu {
   font: 400 1.5rem var(--body-font);
   width: 80%;
   text-align: center;
-  line-height: 32px;
+  line-height: 32px;;
 }
 
+/* planet-divider*/
 #planet-divider {
   padding-bottom: 0;
 }
@@ -441,8 +446,8 @@ main .planet {
 
 .planet .container {
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: "planet-image planet-name" "planet-desc planet-desc" "planet-infos planet-infos";
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 'planet-name planet-image' 'planet-desc planet-desc' 'planet-infos planet-infos';
   background-color: #2c235c;
   z-index: -2;
   position: relative;
@@ -470,10 +475,10 @@ main .planet {
 .planet .planet-infos {
   padding: 0.5rem;
   grid-area: planet-infos;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: space-around;
-  column-gap: 0.5rem;
-  row-gap: 1.5rem;
+  column-gap: 1rem;
+  row-gap: 1.25rem;
 }
 
 .planet .planet-info {
@@ -482,10 +487,12 @@ main .planet {
   background-color: #2c235c;
   position: relative;
 
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  min-height: 80px;
 }
 
 .planet .planet-info::before {
@@ -531,21 +538,14 @@ main .planet {
 
 .planet .planet-info p:nth-child(2) {
   text-align: center;
+  font-weight: 600;
 }
 
 #venus .container,
 #marte .container,
 #saturno .container,
 #netuno .container {
-  grid-template-areas: "planet-name planet-image" "planet-desc planet-desc" "planet-infos planet-infos";
-}
-
-#urano .container {
-  grid-template-columns: auto 1fr;
-}
-
-#urano .container .planet-image {
-  max-width: 280px;
+  grid-template-areas: 'planet-image planet-name' 'planet-desc planet-desc' 'planet-infos planet-infos';
 }
 
 /* Footer */
@@ -559,13 +559,9 @@ footer {
 
   padding: .5rem;
 
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  flex-direction: column;
 
-  grid-template-areas: 'logo social' 'copyright copyright';
   row-gap: 1rem;
-
-  align-items: center;
 }
 
 footer h1.logo {
@@ -573,11 +569,7 @@ footer h1.logo {
   font: 400 1.5rem var(--logo-font);
 }
 
-footer .social-links{
-  grid-area: social;
-}
-
-footer .social-links a {
+footer a {
   color: var(--white-color);
   text-decoration: none;
   font-size: 1.5rem;
@@ -587,7 +579,7 @@ footer .social-links a {
   transition: color .2s;
 }
 
-footer .social-links a:hover {
+footer a:hover {
   color: rgb(96, 235, 228);
 }
 
@@ -598,9 +590,7 @@ footer p {
   font: 400 1rem var(--body-font);
 }
 
-/* Responsividade */
-
-@media (min-width: 800px) {
+@media (min-width: 750px) {
   /* Menu */
   #header nav {
     padding: 0 2rem;
@@ -628,8 +618,70 @@ footer p {
   }
 
   nav .menu ul li a {
-    font: 400 1.5rem var(--body-font);
+    font: 400 1.25rem var(--body-font);
     color: var(--white-color);
     text-decoration: none;
+  }
+
+  /* Planetas */
+  .planet .planet-image img{
+    max-width: 400px;
+  }
+
+  .planet .container {
+    grid-template-columns: auto min-content;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'planet-name planet-image' ' planet-desc planet-infos';
+  }
+
+  #venus .container,
+  #marte .container,
+  #saturno .container,
+  #netuno .container {
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'planet-image planet-name' 'planet-infos planet-desc';
+  }
+}
+
+@media (min-width: 1100px) {
+  .planet .container {
+    grid-template-columns: auto min-content;
+    grid-template-rows: min-content auto auto;
+    grid-template-areas: 'planet-desc planet-image' 'planet-desc planet-name' 'planet-infos planet-name';
+  }
+
+  #venus .container,
+  #marte .container,
+  #saturno .container,
+  #netuno .container {
+    grid-template-columns: auto min-content;
+    grid-template-rows: min-content auto auto;
+    grid-template-areas: 'planet-desc planet-image' 'planet-desc planet-name' 'planet-infos planet-name';
+  }
+
+  .planet .planet-image img {
+    max-height: 200px;
+  }
+
+  .planet .planet-desc {
+    align-self: center;
+  }
+
+  .planet .planet-infos {
+    grid-area: planet-infos;
+    display: flex;
+    column-gap: 1rem;
+    padding: .5rem;
+  }
+
+  .planet .planet-info {
+    padding: .5rem;
+    max-width: 200px;
+  }
+
+  .planet-info{
+    background-color: red;
+    flex-grow: 1;
   }
 }
