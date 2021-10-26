@@ -552,12 +552,11 @@ footer a {
   font-size: 1.5rem;
   padding: 0 0.3rem;
   margin: 0 0.5rem;
-
   transition: color 0.2s;
 }
 
 footer a:hover {
-  color: rgb(96, 235, 228);
+  color: rgb(96, 152, 235);
 }
 
 footer p {
