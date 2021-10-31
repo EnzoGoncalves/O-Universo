@@ -455,7 +455,7 @@ main .planet {
   grid-area: planet-desc;
   padding-top: 0;
   color: var(--white-color);
-  border: 5px dotted black;
+  border: 3px dotted black;
   margin: .5rem;
 }
 
