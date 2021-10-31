@@ -4,4 +4,4 @@ Site onde apliquei muitas coisas da qual aprendi sobre HTML, CSS e JavaScript. Ã
 
 Clique aqui para ir ao site https://enzogoncalves.github.io/O-Universo/
 
-![enzogoncalves github io_O-Universo](https://user-images.githubusercontent.com/75916483/139604482-999d34e8-0d99-470e-8f6c-ffd38c2b6b3c.png)
+![enzogoncalves github io_O-Universo](https://user-images.githubusercontent.com/75916483/139604555-3f8c795b-fb41-4b12-a001-5dfd91b01fdd.png)
