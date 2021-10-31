@@ -448,13 +448,14 @@ main .planet {
 .planet .planet-image {
   grid-area: planet-image;
   height: 100%;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
 .planet .planet-desc {
   grid-area: planet-desc;
   padding-top: 0;
   color: var(--white-color);
-  border: 2px dotted black;
+  border: 5px dotted black;
   margin: .5rem;
 }
 
@@ -601,7 +602,7 @@ footer p {
   bottom: -2rem;
   right: 2rem;
 
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
   
   transition: bottom .1s;
 }
